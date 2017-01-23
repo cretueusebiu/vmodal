@@ -3,6 +3,12 @@ module.exports = {
     filename: 'vmodal.js'
   },
   externals: {
-    jquery: 'jQuery'
+    jquery: {
+      commonjs: 'jquery',
+      commonjs2: 'jquery',
+      amd: 'jquery',
+      global: 'jQuery',
+      root: 'jQuery'
+    }
   }
 }
