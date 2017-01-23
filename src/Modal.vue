@@ -124,6 +124,10 @@ export default {
      * Initialize the Boostrap modal.
      */
     initializeModal () {
+      if (!$.fn.modal) {
+        throw new Error('[vmodal] Bootstrap is required.')
+      }
+
       this.$modal.modal({
         show: false,
         focus: this.focus,
