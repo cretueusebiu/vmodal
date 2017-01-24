@@ -29,10 +29,8 @@ new Vue({
   el: '#app',
 
   methods: {
-    methods: {
-      showModal () {
-        this.$refs.modal.show()
-      }
+    showModal () {
+      this.$refs.modal.show()
     }
   }
 })
