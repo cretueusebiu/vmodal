@@ -4,22 +4,28 @@
         'modal-sm': size === 'small',
         'modal-lg': size === 'large'
       }">
-      <slot name="content">
-        <div class="modal-content">
+      <div class="modal-content">
+        <slot name="content">
           <form @submit.prevent="$emit('submit', $event)">
-            <slot name="header">
-              <div class="modal-header">
-                <slot name="title" class="modal-title"></slot>
+            <div class="modal-header">
+              <slot name="header">
+                <div class="modal-title">
+                  <slot name="title"></slot>
+                </div>
                 <button v-if="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
-            </slot>
-            <slot name="body"></slot>
-            <slot name="footer"></slot>
+              </slot>
+            </div>
+            <div class="modal-body">
+              <slot name="body"></slot>
+            </div>
+            <div v-if="$slots.footer" class="modal-footer">
+              <slot name="footer"></slot>
+            </div>
           </form>
-        </div>
-      </slot>
+        </slot>
+      </div>
     </div>
   </div>
 </template>
@@ -59,14 +65,6 @@ export default {
     large: Boolean,
 
     submit: Function
-  },
-
-  beforeMount () {
-    this.addSlotClasses()
-  },
-
-  beforeUpdate () {
-    this.addSlotClasses()
   },
 
   mounted () {
@@ -141,31 +139,6 @@ export default {
         'hide.bs.modal': e => this.$emit('hide', e),
         'hidden.bs.modal': e => this.$emit('hidden', e)
       })
-    },
-
-    /**
-     * Add classes to slots.
-     */
-    addSlotClasses () {
-      ['title', 'header', 'body', 'footer', 'content'].forEach(slot => {
-        this.addSlotClass(this.$slots[slot], `modal-${slot}`)
-      })
-    },
-
-    /**
-     * Add a class to the given slot.
-     *
-     * @param {Object} slot
-     * @param {String} className
-     */
-    addSlotClass (slot, className) {
-      if (!slot || slot.length === 0) return
-
-      const sClass = slot[0].data.staticClass || ''
-
-      if (!sClass.includes(className)) {
-        slot[0].data.staticClass = sClass.length > 0 ? `${sClass} ${className}` : className
-      }
     }
   }
 }

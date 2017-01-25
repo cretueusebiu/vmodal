@@ -100,3 +100,12 @@ this.$refs.modal.$on('shown', (e) => {
   console.log('Modal shown')
 })
 ```
+
+### Slots
+| Name | Description |
+| :--- | :--- |
+| __title__ | The modal title. |
+| __body__ | The modal body. |
+| __footer__ | The modal footer. |
+| __header__ | The modal header. |
+| __content__ | The modal content. |
