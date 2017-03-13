@@ -1,6 +1,6 @@
 {
   "name": "vmodal",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A Vue component for Bootstrap modals.",
   "main": "dist/vmodal.js",
   "scripts": {

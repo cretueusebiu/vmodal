@@ -34,6 +34,8 @@
 import $ from 'jquery'
 
 export default {
+  name: 'modal',
+
   props: {
     backdrop: {
       type: [Boolean, String],
