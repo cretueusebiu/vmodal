@@ -76,7 +76,7 @@ this.$refs.modal.show()
 | Name | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | __backdrop__ | Boolean&#124;String | `true` | Includes a modal-backdrop element or `static` for a backdrop which doesn't close the modal on click. |
-| __close__ | Boolean | `false` | Show close &times; button. |
+| __close__ | Boolean | `true` | Show close &times; button. |
 | __focus__ | Boolean | `true` | Puts the focus on the modal when initialized. |
 | __keyboard__ | Boolean | `true` | Closes the modal when escape key is pressed. |
 | __size__ | String | | Optional size: `sm` or `lg`. |
