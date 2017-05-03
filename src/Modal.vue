@@ -1,8 +1,8 @@
 <template>
   <div class="modal fade">
     <div class="modal-dialog" role="document" :class="{
-        'modal-sm': size === 'small',
-        'modal-lg': size === 'large'
+        'modal-sm': size === 'small' || small,
+        'modal-lg': size === 'large' || large
       }">
       <div class="modal-content">
         <slot name="content">
