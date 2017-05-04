@@ -6,7 +6,7 @@
       }">
       <div class="modal-content">
         <slot name="content">
-          <form @submit.prevent="$emit('submit', $event)">
+          <form @submit.prevent="$emit('submit', $event)" @keydown="onKeydown">
             <div class="modal-header">
               <slot name="header">
                 <div class="modal-title">
@@ -66,6 +66,7 @@ export default {
     small: Boolean,
     large: Boolean,
 
+    form: Object,
     submit: Function
   },
 
@@ -141,6 +142,12 @@ export default {
         'hide.bs.modal': e => this.$emit('hide', e),
         'hidden.bs.modal': e => this.$emit('hidden', e)
       })
+    },
+
+    onKeydown (e) {
+      if (this.form) {
+        this.form.errors.clear(e.target.name)
+      }
     }
   }
 }

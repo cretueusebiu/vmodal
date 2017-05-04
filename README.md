@@ -82,6 +82,7 @@ this.$refs.modal.show()
 | __size__ | String | | Optional size: `sm` or `lg`. |
 | __small__ | Boolean | | Equivalent to `size="sm"`. |
 | __large__ | Boolean | | Equivalent to `size="lg"`. |
+| __form__ | Object | | A [vform](https://github.com/cretueusebiu/vform) object. |
 
 ### Events
 
