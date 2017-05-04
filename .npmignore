@@ -1,2 +1,7 @@
 src/
 example/
+.editorconfig
+.eslintrc
+.gitignore
+webpack.config.js
+yarn.lock
