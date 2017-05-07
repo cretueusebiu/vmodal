@@ -87,6 +87,8 @@ export default {
      * @return {this}
      */
     show () {
+      this.updateOptions()
+
       this.$modal.modal('show')
 
       return this
@@ -141,6 +143,18 @@ export default {
         'shown.bs.modal': e => this.$emit('shown', e),
         'hide.bs.modal': e => this.$emit('hide', e),
         'hidden.bs.modal': e => this.$emit('hidden', e)
+      })
+    },
+
+    updateOptions () {
+      const options = {
+        focus: this.focus,
+        backdrop: this.backdrop,
+        keyboard: this.keyboard
+      }
+
+      Object.keys(options).forEach(key => {
+        this.$modal.data('bs.modal').options[key] = options[key]
       })
     },
 
