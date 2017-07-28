@@ -77,7 +77,7 @@ export default {
   },
 
   beforeDestroy () {
-    this.removeBackdrop()
+    this.hide()
   },
 
   methods: {
@@ -114,13 +114,6 @@ export default {
       this.$modal.modal('toggle')
 
       return this
-    },
-
-    /**
-     * Remove the modal backdrop.
-     */
-    removeBackdrop () {
-      $('.modal-backdrop').remove()
     },
 
     /**
