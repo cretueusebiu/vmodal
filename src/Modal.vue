@@ -146,8 +146,10 @@ export default {
         keyboard: this.keyboard
       }
 
+      const modal = this.$modal.data('bs.modal')
+
       Object.keys(options).forEach(key => {
-        this.$modal.data('bs.modal').options[key] = options[key]
+        (modal.options || modal._config)[key] = options[key]
       })
     },
 
