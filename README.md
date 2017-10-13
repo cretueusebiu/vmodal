@@ -15,7 +15,7 @@ npm install --save vmodal
 
 ## Usage
 
-See the included [example](example).
+See the included [examples](examples).
 
 ### JavaScript
 
@@ -42,9 +42,11 @@ new Vue({
 <div id="app">
   <modal ref="modal">
     <h5 slot="title">Modal title</h5>
+    
     <template slot="body">
       <p>Modal body text goes here.</p>
     </template>
+
     <template> slot="footer">
       <button type="button" class="btn btn-primary">Save changes</button>
       <button type="button" class="btn btn-secondary">Close</button>
