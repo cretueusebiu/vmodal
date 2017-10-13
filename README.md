@@ -42,13 +42,13 @@ new Vue({
 <div id="app">
   <modal ref="modal">
     <h5 slot="title">Modal title</h5>
-    <div slot="body">
+    <template slot="body">
       <p>Modal body text goes here.</p>
-    </div>
-    <div slot="footer">
+    </template>
+    <template> slot="footer">
       <button type="button" class="btn btn-primary">Save changes</button>
       <button type="button" class="btn btn-secondary">Close</button>
-    </div>
+    </template>
   </modal>
 
   <button @click="showModal" type="button" class="btn btn-primary">Show Modal</button>
