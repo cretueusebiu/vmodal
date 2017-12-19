@@ -1,8 +1,8 @@
 <template>
   <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document" :class="{
-        'modal-sm': size === 'small' || small,
-        'modal-lg': size === 'large' || large
+        'modal-sm': size === 'sm' || small,
+        'modal-lg': size === 'lg' || large
       }">
       <div class="modal-content">
         <slot name="content">
