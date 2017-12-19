@@ -47,7 +47,7 @@ new Vue({
       <p>Modal body text goes here.</p>
     </template>
 
-    <template> slot="footer">
+    <template slot="footer">
       <button type="button" class="btn btn-primary">Save changes</button>
       <button type="button" class="btn btn-secondary">Close</button>
     </template>
