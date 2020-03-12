@@ -2,7 +2,8 @@
   <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document" :class="{
         'modal-sm': size === 'sm' || small,
-        'modal-lg': size === 'lg' || large
+        'modal-lg': size === 'lg' || large,
+        'modal-xl': size === 'xl'
       }">
       <div class="modal-content">
         <slot name="content">
@@ -60,7 +61,7 @@ export default {
     size: {
       type: String,
       required: false,
-      validator: val => ['sm', 'lg'].includes(val)
+      validator: val => ['sm', 'lg', 'xl'].includes(val)
     },
 
     small: Boolean,

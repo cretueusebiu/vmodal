@@ -81,9 +81,7 @@ this.$refs.modal.show()
 | __close__ | Boolean | `true` | Show close &times; button. |
 | __focus__ | Boolean | `true` | Puts the focus on the modal when initialized. |
 | __keyboard__ | Boolean | `true` | Closes the modal when escape key is pressed. |
-| __size__ | String | | Optional size: `sm` or `lg`. |
-| __small__ | Boolean | | Equivalent to `size="sm"`. |
-| __large__ | Boolean | | Equivalent to `size="lg"`. |
+| __size__ | String | | Optional size: `sm`, `lg` or `xl`. |
 | __form__ | Object | | A [vform](https://github.com/cretueusebiu/vform) object. |
 
 ### Events
