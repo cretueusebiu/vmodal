@@ -1,10 +1,6 @@
 <template>
   <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document" :class="{
-        'modal-sm': size === 'sm' || small,
-        'modal-lg': size === 'lg' || large,
-        'modal-xl': size === 'xl'
-      }">
+    <div class="modal-dialog" role="document" :class="{ [`modal-${getSize}`]: !!getSize }">
       <div class="modal-content">
         <slot name="content">
           <form @submit.prevent="$emit('submit', $event)" @keydown="onKeydown">
@@ -60,8 +56,7 @@ export default {
 
     size: {
       type: String,
-      required: false,
-      validator: val => ['sm', 'lg', 'xl'].includes(val)
+      required: false
     },
 
     small: Boolean,
@@ -69,6 +64,20 @@ export default {
 
     form: Object,
     submit: Function
+  },
+
+  computed: {
+    getSize () {
+      if (this.small) {
+        return 'sm'
+      }
+
+      if (this.large) {
+        return 'lg'
+      }
+
+      return this.size
+    }
   },
 
   mounted () {
